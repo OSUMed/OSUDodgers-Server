@@ -6,11 +6,20 @@ const PORT = process.env.PORT || 3001;
 const mysql = require('mysql')
 
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "123456789",
-    database: "Game_Records"
+    host: "us-cdbr-east-04.cleardb.com",
+    user: "ba35e0607eab85",
+    password: "bb99ef44",
+    database: "heroku_8f9f6856bf050ec"
 })
+
+
+
+// const db = mysql.createPool({
+//     host: "localhost",
+//     user: "root",
+//     password: "123456789",
+//     database: "Game_Records"
+// })
 
 app.use(cors())
 app.use(express.json())
