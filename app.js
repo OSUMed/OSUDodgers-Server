@@ -12,6 +12,7 @@ const db = mysql.createPool({
     database: "Game_Records"
 })
 
+require("dotenv").config();
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
