@@ -5,32 +5,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const mysql = require('mysql')
 
-// const db = mysql.createPool({
-//     host: "localhost",
-//     user: "root",
-//     password: "123456789",
-//     database: "Game_Records"
-// })
-
 const db = mysql.createPool({
-    host: "us-cdbr-east-04.cleardb.com",
-    user: "ba35e0607eab85",
-    password: "bb99ef44",
-    database: "heroku_8f9f6856bf050ec",
-    dialect: "mysql"
+    host: "localhost",
+    user: "root",
+    password: "123456789",
+    database: "Game_Records"
 })
 
-// mysql://ba35e0607eab85:bb99ef44@us-cdbr-east-04.cleardb.com/heroku_8f9f6856bf050ec?reconnect=true
-
-require("dotenv").config();
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-// app.get('/', (req, res) => {
-//     console.log("I did it!")
-// });
+app.get('/', (req, res) => {
+  res.send("Hi!")
+    console.log("I did it!")
+});
 
 
 app.get('/api/get', (req, res) => {
@@ -38,9 +28,9 @@ app.get('/api/get', (req, res) => {
     db.query(sqlInsert, (err, result)=> {
         console.log(result)
         res.send(result)
-        
+
     })
-    
+
 });
 
 
@@ -50,7 +40,7 @@ app.post('/api/post', (req, res)=> {
     const playerName = req.body.player_name;
     const playerScore = req.body.player_score;
 
-    const sqlInsert = "INSERT INTO Top_Records (player_name, player_score) VALUES (?, ?);" 
+    const sqlInsert = "INSERT INTO Top_Records (player_name, player_score) VALUES (?, ?);"
     db.query(sqlInsert, [playerName, playerScore], (err, result)=> {
         console.log(result);
     })
