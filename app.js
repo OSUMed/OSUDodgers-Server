@@ -5,12 +5,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const mysql = require('mysql')
 
+// const db = mysql.createPool({
+//     host: "localhost",
+//     user: "root",
+//     password: "123456789",
+//     database: "Game_Records"
+// })
+
 const db = mysql.createPool({
-    host: "localhost",
-    user: "root",
-    password: "123456789",
-    database: "Game_Records"
+    host: "us-cdbr-east-04.cleardb.com",
+    user: "ba35e0607eab85",
+    password: "bb99ef44",
+    database: "heroku_8f9f6856bf050ec",
+    dialect: "mysql"
 })
+
+// mysql://ba35e0607eab85:bb99ef44@us-cdbr-east-04.cleardb.com/heroku_8f9f6856bf050ec?reconnect=true
 
 require("dotenv").config();
 app.use(cors())

@@ -1,0 +1,16 @@
+{
+    "development": {
+        "host": "localhost",
+        "user": "root",
+        "password": "123456789",
+        "database": "Game_Records"
+    },
+    "production": {
+        "host": "us-cdbr-east-04.cleardb.com",
+        "user": "ba35e0607eab85",
+        "password": "bb99ef44",
+        "database": "heroku_8f9f6856bf050ec",
+        "dialect": "mysql"
+    }
+}
+
