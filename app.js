@@ -26,7 +26,10 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+app.get('/', (req, res) => {
+  res.send("Hi!")
+    console.log("I did it!")
+});
 
 
 app.get('/api/get', (req, res) => {
