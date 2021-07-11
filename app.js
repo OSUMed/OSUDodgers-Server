@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 const mysql = require('mysql')
+require("dotenv").config();
 
 const db = mysql.createPool({
     host: "us-cdbr-east-04.cleardb.com",
